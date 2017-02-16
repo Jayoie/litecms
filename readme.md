@@ -19,18 +19,10 @@ Lavalite is designed to run on a  machine with PHP 5.5.9 and MySQL 5.5.
 ## Installation
 
 Please check the system requirements before installing Lavalite.
-
-1. You may install by cloning from github, or via composer.
-  * Github:
-    * `git clone git@github.com:LavaLite/cms.git`
-    * From a command line open in the folder, run `composer install`.
-  * Composer:
-    * `composer create-project LavaLite/cms --prefer-dist website`
-2. Run the install command to get you started:
-   `php artisan lavalite:install`
-4. You can contigure mail server details in `config/mail.php`.
-5. You can configure the site in the config folder before production.
-6. Finally, setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
+1. run `composer update`
+2. setup DataBase ,edit .env
+3. run `php artisan migrate`,then run `php artisan db:seeder`
+4. setup an [Apache VirtualHost](http://httpd.apache.org/docs/current/vhosts/examples.html) to point to the "public" folder.
   * For development, you can simply run `php artisan serve`
 
 ####Permissions
