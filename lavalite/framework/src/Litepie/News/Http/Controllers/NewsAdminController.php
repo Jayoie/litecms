@@ -57,6 +57,7 @@ class NewsAdminController extends BaseController
                 ->scopeQuery(function($query){
                     return $query->orderBy('id','DESC');
                 })->paginate($pageLimit);
+
         $news['recordsTotal']    = $news['meta']['pagination']['total'];
         $news['recordsFiltered'] = $news['meta']['pagination']['total'];
         $news['request']         = $request->all();

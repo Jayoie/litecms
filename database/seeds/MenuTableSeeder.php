@@ -56,19 +56,6 @@ class MenuTableSeeder extends Seeder
             [
                 'id'          => 3,
                 'parent_id'   => 0,
-                'key'         => 'client',
-                'url'         => '/client',
-                'name'        => 'User',
-                'description' => null,
-                'icon'        => null,
-                'target'      => null,
-                'order'       => 1,
-                'status'      => 1,
-            ],
-
-            [
-                'id'          => 4,
-                'parent_id'   => 0,
                 'key'         => 'main',
                 'url'         => '',
                 'name'        => 'Main Menu',
@@ -80,7 +67,7 @@ class MenuTableSeeder extends Seeder
             ],
 
             [
-                'id'          => 5,
+                'id'          => 4,
                 'parent_id'   => 0,
                 'key'         => 'footer',
                 'url'         => '',
@@ -93,7 +80,7 @@ class MenuTableSeeder extends Seeder
             ],
 
             [
-                'id'          => 6,
+                'id'          => 5,
                 'parent_id'   => 0,
                 'key'         => 'social',
                 'url'         => '',
@@ -106,7 +93,7 @@ class MenuTableSeeder extends Seeder
             ],
 
             [
-                'id'          => null,
+                'id'          => 6,
                 'parent_id'   => 1,
                 'key'         => null,
                 'url'         => 'admin/menu/menu',
@@ -119,7 +106,7 @@ class MenuTableSeeder extends Seeder
             ],
 
             [
-                'id'          => null,
+                'id'          => 7,
                 'parent_id'   => 1,
                 'key'         => null,
                 'url'         => 'admin',
@@ -128,45 +115,6 @@ class MenuTableSeeder extends Seeder
                 'icon'        => 'fa fa-dashboard',
                 'target'      => null,
                 'order'       => 1,
-                'status'      => 1,
-            ],
-
-            [
-                'id'          => null,
-                'parent_id'   => 5,
-                'key'         => null,
-                'url'         => 'https://twitter.com/lavalitecms',
-                'name'        => 'Twitter',
-                'description' => null,
-                'icon'        => null,
-                'target'      => '_blank',
-                'order'       => 11,
-                'status'      => 1,
-            ],
-
-            [
-                'id'          => null,
-                'parent_id'   => 5,
-                'key'         => null,
-                'url'         => 'https://github.com/LavaLite',
-                'name'        => 'GitHub',
-                'description' => null,
-                'icon'        => null,
-                'target'      => '_blank',
-                'order'       => 12,
-                'status'      => 1,
-            ],
-
-            [
-                'id'          => null,
-                'parent_id'   => 5,
-                'key'         => null,
-                'url'         => 'https://www.facebook.com/lavalite/',
-                'name'        => 'Facebook',
-                'description' => null,
-                'icon'        => null,
-                'target'      => '_blank',
-                'order'       => 13,
                 'status'      => 1,
             ],
 

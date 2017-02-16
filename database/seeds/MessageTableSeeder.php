@@ -8,7 +8,7 @@ class MessageTableSeeder extends Seeder
     {
         DB::table('messages')->insert([
             // Uncomment  and edit this section for entering value to message table.
-            /*
+
         array(
         "id"        => "Id",
         "from"        => "From",
@@ -21,7 +21,7 @@ class MessageTableSeeder extends Seeder
         "created_at"        => "Created at",
         "updated_at"        => "Updated at",
         ),
-         */
+
 
         ]);
 
