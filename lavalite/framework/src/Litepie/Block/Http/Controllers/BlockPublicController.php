@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller as BaseController;
 use Litepie\Block\Interfaces\BlockRepositoryInterface;
 use Litepie\Block\Interfaces\CategoryRepositoryInterface;
 
-class BlockController extends BaseController
+class BlockPublicController extends BaseController
 {
 
     /**

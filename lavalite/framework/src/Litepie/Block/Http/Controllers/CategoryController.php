@@ -35,7 +35,6 @@ class CategoryController extends Controller
         $categories = $this->repository->scopeQuery(function ($query) {
             return $query->orderBy('id', 'DESC');
         })->paginate();
-
         return $this->theme->of('block::public.category.index', compact('categories'))->render();
     }
 

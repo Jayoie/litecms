@@ -3,7 +3,7 @@
 namespace Litepie\Block;
 
 use User;
-use View;
+
 class Block
 {
     /**
@@ -19,7 +19,7 @@ class Block
      * Constructor.
      */
     public function __construct(\Litepie\Block\Interfaces\CategoryRepositoryInterface $category,
-        \Litepie\Block\Interfaces\BlockRepositoryInterface $block) {
+        \Litepie\Block\Interfaces\BlockRepositoryInterface                                $block) {
         $this->category = $category;
         $this->block = $block;
     }
@@ -36,6 +36,7 @@ class Block
 
         if (User::hasRole('user')) {
             $this->block->pushCriteria(new \Litepie\Block\Repositories\Criteria\BlockUserCriteria());
+
         }
 
         if ($module == 'block') {
@@ -89,16 +90,17 @@ class Block
      * @return type
      */
 
-    public function display($category)
+    public function getLatest($count)
     {
 
-        $category = $this->category
-            ->scopeQuery(function ($query) use ($category) {
-                return $query->whereSlug($category);
-            })->with(['blocks'])->first();
-        $blocks = $category->blocks;
-        $view = (View::exists("block::public.{$category}")) ? "block::public.{$category}" : "block::public.default";
-        return view($view, compact('blocks', 'category'))->render();
+        $block = $this->block
+
+            ->pushCriteria(new \Litepie\Block\Repositories\Criteria\BlockPublicCriteria())
+            ->scopeQuery(function ($query) use ($count) {
+                return $query->orderBy('id', 'DESC')->take($count);
+            })->all();
+
+        return view('block::public.block.latest', compact('block'))->render();
     }
 
     /**

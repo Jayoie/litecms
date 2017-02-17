@@ -3,7 +3,7 @@
 namespace Litepie\Block\Http\Controller\Api;
 
 use App\Http\Controllers\Controller as BaseController;
-use Litepie\Block\Http\Requests\BlockAdminRequest;
+use Litepie\Block\Http\Requests\BlockRequest;
 use Litepie\Block\Interfaces\BlockRepositoryInterface;
 use Litepie\Block\Models\Block;
 
@@ -39,7 +39,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function index(BlockAdminRequest $request)
+    public function index(BlockRequest $request)
     {
         $blocks = $this->repository
             ->setPresenter('\\Litepie\\Block\\Repositories\\Presenter\\BlockListPresenter')
@@ -60,7 +60,7 @@ class BlockAdminController extends BaseController
      *
      * @return Json
      */
-    public function show(BlockAdminRequest $request, Block $block)
+    public function show(BlockRequest $request, Block $block)
     {
         $block = $block->presenter();
         $block['code'] = 2001;
@@ -76,7 +76,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function create(BlockAdminRequest $request, Block $block)
+    public function create(BlockRequest $request, Block $block)
     {
         $block = $block->presenter();
         $block['code'] = 2002;
@@ -92,7 +92,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function store(BlockAdminRequest $request)
+    public function store(BlockRequest $request)
     {
         try {
             $attributes = $request->all();
@@ -121,7 +121,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function edit(BlockAdminRequest $request, Block $block)
+    public function edit(BlockRequest $request, Block $block)
     {
         $block = $block->presenter();
         $block['code'] = 2003;
@@ -137,7 +137,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function update(BlockAdminRequest $request, Block $block)
+    public function update(BlockRequest $request, Block $block)
     {
         try {
 
@@ -168,7 +168,7 @@ class BlockAdminController extends BaseController
      *
      * @return json
      */
-    public function destroy(BlockAdminRequest $request, Block $block)
+    public function destroy(BlockRequest $request, Block $block)
     {
 
         try {
